@@ -1,1 +1,1 @@
-# Sath-Villa-Naadi-Ayurveda-Resort
+# Sath-Villa-Naadi-Ayurveda-Resort adiptha
