@@ -3,8 +3,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const router = require("./Routes/productRoutes");
-
+const path = require("path");
 const app = express();
+const cors = require("cors");
 
 //Middleware
 // app.use("/",(req, res, next) => {
@@ -12,6 +13,11 @@ const app = express();
 // })
 
 app.use(express.json());
+app.use(cors());
+
+// 👇 expose uploads folder for static file serving
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
 app.use("/products", router); //users-variable name
 
 //Database Connection

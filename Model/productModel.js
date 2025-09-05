@@ -8,9 +8,9 @@ const productSchema = new Schema({
     required: true, //validate
   },
 
-  p_id: {
+  p_image: {
     type: String, //data type
-    required: true, //validate
+    required: false, //validate
   },
 
   p_description: {
@@ -22,6 +22,17 @@ const productSchema = new Schema({
     type: Number, //data type
     required: true, //validate
   },
+
+   p_quantity: {
+    type: Number, //data type
+    required: true, //validate
+  },
+
+   p_catogory: {
+    type: String, //data type
+    required: true, //validate
+  },
+
 });
 
 //mongoDB ekata modal eke data export karanawa table ekak vidihata

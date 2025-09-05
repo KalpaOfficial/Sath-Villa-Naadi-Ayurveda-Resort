@@ -1,5 +1,6 @@
 //model ake data contro karanawa
-
+const fs = require("fs");
+const path = require("path");
 //model eka insert karanawa
 const Product = require("../Model/productModel");
 
@@ -25,24 +26,27 @@ const getAllProducts = async (req, res, next) => {
 
 //data insert
 const addProducts = async (req, res, next) => {
-  // model eke dapu deta variable ekakata assign karanawa
-  const { p_name, p_id, p_description, p_price } = req.body;
+  const { p_name, p_description, p_price, p_quantity, p_catogory } = req.body;
 
-  let products;
-
+  let product;
   try {
-    products = new Product({ p_name, p_id, p_description, p_price });
-    await products.save();
+    product = new Product({
+      p_name,
+      p_description,
+      p_price,
+      p_quantity,
+      p_catogory,
+      p_image: req.file ? `/uploads/${req.file.filename}` : "", // save path
+    });
+
+    await product.save();
+    return res.status(200).json({ product });
   } catch (err) {
     console.log(err);
+    return res.status(500).json({ message: "Unable to add product" });
   }
-
-  //dont insert products
-  if (!products) {
-    return res.status(404).json({ message: "unable to add products" });
-  }
-  return res.status(200).json({ products });
 };
+
 
 //get by id
 const getById = async (req, res, next) => {
@@ -66,29 +70,41 @@ const getById = async (req, res, next) => {
 //Update product
 const updateProduct = async (req, res, next) => {
   const id = req.params.id;
-  const { p_name, p_id, p_description, p_price } = req.body;
+  const { p_name, p_description, p_price, p_quantity, p_catogory } = req.body;
 
   let product;
-
   try {
-    product = await Product.findByIdAndUpdate(id, {
-      p_name: p_name,
-      p_id: p_id,
-      p_description: p_description,
-      p_price: p_price,
-    });
-    product = await product.save();
+    product = await Product.findById(id);
+
+    if (!product) {
+      return res.status(404).json({ message: "Product not found" });
+    }
+
+    // Update fields
+    product.p_name = p_name;
+    product.p_description = p_description;
+    product.p_price = p_price;
+    product.p_quantity = p_quantity;
+    product.p_catogory = p_catogory;
+
+    // If new image uploaded
+    if (req.file) {
+      // delete old image
+      if (product.p_image) {
+        const oldPath = path.join(__dirname, "..", "uploads", path.basename(product.p_image));
+        fs.unlink(oldPath, (err) => {
+          if (err) console.log("Old image delete error:", err);
+        });
+      }
+      product.p_image = `/uploads/${req.file.filename}`;
+    }
+
+    await product.save();
+    return res.status(200).json({ product });
   } catch (err) {
     console.log(err);
+    return res.status(500).json({ message: "Update failed" });
   }
-
-  //not available product
-  if (!product) {
-    return res
-      .status(404)
-      .json({ message: "unable to update product details" });
-  }
-  return res.status(200).json({ product });
 };
 
 //Delete product
