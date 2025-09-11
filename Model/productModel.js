@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema; //schema kiyana function eka athule thama input ganna details call karanne
 
+//me function eka athule thama insert karanna details tika danne
 const productSchema = new Schema({
   p_name: {
     type: String, //data type
@@ -39,4 +40,3 @@ module.exports = mongoose.model(
   "productModel", //file name
   productSchema //function name
 );
-
