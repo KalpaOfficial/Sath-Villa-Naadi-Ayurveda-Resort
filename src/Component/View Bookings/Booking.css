@@ -1,0 +1,125 @@
+/* --- Bookings Page Layout --- */
+.bookings-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: #f9fdf9;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.page-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2e7d32;
+  font-weight: 700;
+  position: relative;
+}
+
+.page-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #2e7d32;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* --- Grid Layout --- */
+.bookings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  justify-items: center;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+/* --- Booking Card --- */
+.booking-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  width: 100%;
+  max-width: 320px;
+  padding: 18px;
+}
+
+.booking-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* --- Booking Info --- */
+.booking-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1b5e20;
+}
+
+.booking-meta {
+  font-size: 0.95rem;
+  color: #444;
+  margin: 5px 0;
+}
+
+.booking-meta strong {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+/* --- Actions --- */
+.booking-actions {
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+/* Update Button */
+.update-btn {
+  background: #2e7d32;
+  color: white;
+}
+
+.update-btn:hover {
+  background: #1b5e20;
+  transform: translateY(-2px);
+}
+
+/* Delete Button */
+.delete-btn {
+  background: #d32f2f;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #b71c1c;
+  transform: translateY(-2px);
+}
+
+/* --- Empty State --- */
+.no-bookings {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #777;
+  padding: 40px 0;
+  font-style: italic;
+}

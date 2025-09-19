@@ -1,0 +1,348 @@
+/* Ayurveda Page Styles */
+.ayurveda-page {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.ayurveda-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.ayurveda-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.booking-widget {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 25px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.booking-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: end;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-group label {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.field-group input,
+.field-group select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-width: 150px;
+}
+
+.checkbox-group {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-group input {
+  min-width: auto;
+}
+
+.checkbox-group label {
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+.book-now-btn {
+  background: #8e7037;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.book-now-btn:hover {
+  background: #6c5529;
+}
+
+/* Why Book Direct Section */
+.why-book-direct {
+  padding: 60px 0;
+  background: #f9f5eb;
+}
+
+.why-book-direct h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #8e7037;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+}
+
+.why-book-direct p {
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ayurveda Packages Section */
+.ayurveda-packages {
+  padding: 60px 0;
+}
+
+.ayurveda-packages h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #8e7037;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.package-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.package-image-container {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.package-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.package-card:hover .package-image {
+  transform: scale(1.1);
+}
+
+.package-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(142, 112, 55, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.package-card:hover .package-overlay {
+  opacity: 1;
+}
+
+.view-details-btn {
+  background: white;
+  color: #8e7037;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+
+.view-details-btn:hover {
+  background: #8e7037;
+  color: white;
+}
+
+.package-content {
+  padding: 20px;
+}
+
+.package-content h3 {
+  color: #8e7037;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  min-height: 56px;
+}
+
+.package-content p {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.view-more-btn, .view-less-btn {
+  background: transparent;
+  color: #8e7037;
+  border: 1px solid #8e7037;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+  width: 100%;
+}
+
+.view-more-btn:hover, .view-less-btn:hover {
+  background: #8e7037;
+  color: white;
+}
+
+.package-details {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+/* Complimentary Experiences Section */
+.complimentary-experiences {
+  padding: 60px 0;
+  background: #f9f5eb;
+}
+
+.complimentary-experiences h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #8e7037;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+}
+
+.experience-tier {
+  margin-bottom: 40px;
+}
+
+.tier-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tier-icon {
+  font-size: 1.5rem;
+  margin-right: 15px;
+  color: #8e7037;
+}
+
+.tier-header h3 {
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.on-property, .excursions {
+  margin-bottom: 30px;
+}
+
+.on-property h4, .excursions h4 {
+  color: #8e7037;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.complimentary-experiences ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.complimentary-experiences li {
+  margin-bottom: 20px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.complimentary-experiences li:before {
+  content: "»";
+  position: absolute;
+  left: 0;
+  color: #8e7037;
+}
+
+.coming-soon {
+  font-style: italic;
+  color: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .booking-fields {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .field-group {
+    width: 100%;
+  }
+  
+  .packages-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tier-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .tier-icon {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ayurveda-hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .booking-widget {
+    padding: 15px;
+  }
+  
+  .package-content h3 {
+    font-size: 1rem;
+    min-height: auto;
+  }
+}
