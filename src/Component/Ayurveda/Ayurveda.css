@@ -5,6 +5,7 @@
   line-height: 1.6;
 }
 
+/* Container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -13,33 +14,38 @@
 
 /* Hero Section */
 .ayurveda-hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+  background: linear-gradient(rgba(0, 128, 96, 0.6), rgba(0, 128, 96, 0.6)), 
+              url('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
   background-size: cover;
   background-position: center;
-  color: white;
-  padding: 60px 0;
+  color: #fff;
+  padding: 80px 0;
   text-align: center;
 }
 
 .ayurveda-hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
+  font-size: 2.8rem;
+  margin-bottom: 25px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
+/* Booking Widget */
 .booking-widget {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
-  padding: 25px;
-  max-width: 900px;
-  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 950px;
+  margin: -40px auto 40px auto;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 5;
 }
 
 .booking-fields {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 20px;
   justify-content: center;
   align-items: end;
 }
@@ -51,152 +57,110 @@
 
 .field-group label {
   color: #333;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 5px;
   text-align: left;
 }
 
 .field-group input,
 .field-group select {
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  min-width: 150px;
+  border-radius: 6px;
+  min-width: 180px;
+  transition: 0.3s;
 }
 
-.checkbox-group {
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
-}
-
-.checkbox-group input {
-  min-width: auto;
-}
-
-.checkbox-group label {
-  margin-bottom: 0;
-  white-space: nowrap;
+.field-group input:focus,
+.field-group select:focus {
+  border-color: #008060;
+  outline: none;
 }
 
 .book-now-btn {
-  background: #8e7037;
-  color: white;
+  background: #008060;
+  color: #fff;
   border: none;
-  padding: 12px 25px;
-  border-radius: 4px;
+  padding: 14px 28px;
+  border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: 0.3s;
 }
 
 .book-now-btn:hover {
-  background: #6c5529;
+  background: #006648;
+  transform: translateY(-3px);
 }
 
 /* Why Book Direct Section */
 .why-book-direct {
-  padding: 60px 0;
-  background: #f9f5eb;
+  padding: 60px 10%;
+  background: #f7fdfb;
+  text-align: center;
 }
 
 .why-book-direct h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #8e7037;
+  margin-bottom: 25px;
+  color: #008060;
+  font-size: 2rem;
   text-transform: uppercase;
-  font-size: 1.8rem;
 }
 
 .why-book-direct p {
-  margin-bottom: 20px;
+  margin: 0 auto 20px auto;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  color: #555;
+  line-height: 1.7;
 }
 
 /* Ayurveda Packages Section */
 .ayurveda-packages {
-  padding: 60px 0;
+  padding: 60px 10%;
+  background: #fff;
+  text-align: center;
 }
 
 .ayurveda-packages h2 {
-  text-align: center;
   margin-bottom: 40px;
-  color: #8e7037;
+  color: #008060;
+  font-size: 2rem;
   text-transform: uppercase;
-  font-size: 1.8rem;
 }
 
 .packages-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 25px;
 }
 
 .package-card {
-  background: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  background: #fff;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
 }
 
 .package-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,128,96,0.25);
 }
 
 .package-image-container {
-  position: relative;
-  overflow: hidden;
   height: 200px;
+  overflow: hidden;
 }
 
 .package-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: 0.5s;
 }
 
 .package-card:hover .package-image {
   transform: scale(1.1);
-}
-
-.package-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(142, 112, 55, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.package-card:hover .package-overlay {
-  opacity: 1;
-}
-
-.view-details-btn {
-  background: white;
-  color: #8e7037;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s, color 0.3s;
-}
-
-.view-details-btn:hover {
-  background: #8e7037;
-  color: white;
 }
 
 .package-content {
@@ -204,10 +168,9 @@
 }
 
 .package-content h3 {
-  color: #8e7037;
+  color: #008060;
   margin-bottom: 15px;
-  font-size: 1.1rem;
-  min-height: 56px;
+  font-size: 1.3rem;
 }
 
 .package-content p {
@@ -215,134 +178,65 @@
   margin-bottom: 15px;
 }
 
-.view-more-btn, .view-less-btn {
-  background: transparent;
-  color: #8e7037;
-  border: 1px solid #8e7037;
-  padding: 8px 15px;
-  border-radius: 4px;
+.view-details-btn {
+  background: #008060;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
-  transition: background 0.3s, color 0.3s;
-  width: 100%;
+  transition: 0.3s;
 }
 
-.view-more-btn:hover, .view-less-btn:hover {
-  background: #8e7037;
-  color: white;
-}
-
-.package-details {
-  border-top: 1px solid #eee;
-  padding-top: 15px;
-  margin-top: 15px;
+.view-details-btn:hover {
+  background: #006648;
 }
 
 /* Complimentary Experiences Section */
 .complimentary-experiences {
-  padding: 60px 0;
-  background: #f9f5eb;
+  padding: 60px 10%;
+  background: #f7fdfb;
 }
 
 .complimentary-experiences h2 {
   text-align: center;
   margin-bottom: 40px;
-  color: #8e7037;
+  color: #008060;
   text-transform: uppercase;
-  font-size: 1.8rem;
-}
-
-.experience-tier {
-  margin-bottom: 40px;
-}
-
-.tier-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.tier-icon {
-  font-size: 1.5rem;
-  margin-right: 15px;
-  color: #8e7037;
-}
-
-.tier-header h3 {
-  color: #333;
-  font-size: 1.2rem;
-}
-
-.on-property, .excursions {
-  margin-bottom: 30px;
-}
-
-.on-property h4, .excursions h4 {
-  color: #8e7037;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 .complimentary-experiences ul {
   list-style: none;
-  padding-left: 0;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .complimentary-experiences li {
-  margin-bottom: 20px;
-  padding-left: 20px;
+  margin-bottom: 15px;
+  padding-left: 25px;
   position: relative;
+  color: #444;
 }
 
-.complimentary-experiences li:before {
-  content: "»";
+.complimentary-experiences li::before {
+  content: "✔";
   position: absolute;
   left: 0;
-  color: #8e7037;
+  color: #008060;
+  font-weight: bold;
 }
 
-.coming-soon {
-  font-style: italic;
-  color: #888;
-}
-
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
   .booking-fields {
     flex-direction: column;
     align-items: stretch;
   }
-  
-  .field-group {
-    width: 100%;
-  }
-  
   .packages-grid {
     grid-template-columns: 1fr;
-  }
-  
-  .tier-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .tier-icon {
-    margin-bottom: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .ayurveda-hero h1 {
-    font-size: 1.8rem;
-  }
-  
-  .booking-widget {
-    padding: 15px;
-  }
-  
-  .package-content h3 {
-    font-size: 1rem;
-    min-height: auto;
   }
 }
