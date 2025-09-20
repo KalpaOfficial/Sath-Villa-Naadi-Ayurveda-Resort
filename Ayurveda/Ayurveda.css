@@ -1,0 +1,242 @@
+/* Ayurveda Page Styles */
+.ayurveda-page {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.ayurveda-hero {
+  background: linear-gradient(rgba(0, 128, 96, 0.6), rgba(0, 128, 96, 0.6)), 
+              url('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.ayurveda-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Booking Widget */
+.booking-widget {
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 950px;
+  margin: -40px auto 40px auto;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 5;
+}
+
+.booking-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: end;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-group label {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.field-group input,
+.field-group select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  min-width: 180px;
+  transition: 0.3s;
+}
+
+.field-group input:focus,
+.field-group select:focus {
+  border-color: #008060;
+  outline: none;
+}
+
+.book-now-btn {
+  background: #008060;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.book-now-btn:hover {
+  background: #006648;
+  transform: translateY(-3px);
+}
+
+/* Why Book Direct Section */
+.why-book-direct {
+  padding: 60px 10%;
+  background: #f7fdfb;
+  text-align: center;
+}
+
+.why-book-direct h2 {
+  margin-bottom: 25px;
+  color: #008060;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.why-book-direct p {
+  margin: 0 auto 20px auto;
+  max-width: 800px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Ayurveda Packages Section */
+.ayurveda-packages {
+  padding: 60px 10%;
+  background: #fff;
+  text-align: center;
+}
+
+.ayurveda-packages h2 {
+  margin-bottom: 40px;
+  color: #008060;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.package-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.package-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,128,96,0.25);
+}
+
+.package-image-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.package-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.package-card:hover .package-image {
+  transform: scale(1.1);
+}
+
+.package-content {
+  padding: 20px;
+}
+
+.package-content h3 {
+  color: #008060;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.package-content p {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.view-details-btn {
+  background: #008060;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.view-details-btn:hover {
+  background: #006648;
+}
+
+/* Complimentary Experiences Section */
+.complimentary-experiences {
+  padding: 60px 10%;
+  background: #f7fdfb;
+}
+
+.complimentary-experiences h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #008060;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.complimentary-experiences ul {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.complimentary-experiences li {
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+  color: #444;
+}
+
+.complimentary-experiences li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #008060;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .booking-fields {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .packages-grid {
+    grid-template-columns: 1fr;
+  }
+}
